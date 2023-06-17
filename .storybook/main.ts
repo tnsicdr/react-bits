@@ -6,7 +6,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     {
-      name: "@storyboook/addon-styling",
+      name: "@storybook/addon-styling",
       options: {
         postCss: {
           implementation: require("postcss"),
