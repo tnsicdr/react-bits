@@ -4,6 +4,6 @@ import Button from "./Button";
 describe("<Button />", () => {
   it("should render children", () => {
     render(<Button>Test Text</Button>);
-    expect(screen.getByText("Test Text")).toBeIntheDocument();
+    expect(screen.queryByText("Test Text")).toBeTruthy();
   });
 });
