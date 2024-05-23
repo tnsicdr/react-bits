@@ -1,6 +1,6 @@
 {
   "name": "@tnsicdr/react-bits",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "license": "UNLICENSED",
   "type": "module",
