@@ -1,7 +1,7 @@
 {
   "name": "@tnsicdr/react-bits",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "UNLICENSED",
   "type": "module",
   "scripts": {
@@ -62,7 +62,7 @@
   ],
   "main": "./dist/react-bits.umd.js",
   "module": "./dist/react-bits.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/react-bits.d.ts",
   "exports": {
     ".": {
       "import": "./dist/react-bits.es.js",
