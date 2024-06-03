@@ -1,7 +1,7 @@
 {
   "name": "@tnsicdr/react-bits",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "UNLICENSED",
   "type": "module",
   "scripts": {
@@ -67,6 +67,7 @@
     ".": {
       "import": "./dist/react-bits.es.js",
       "require": "./dist/react-bits.umd.js"
-    }
+    },
+    "./react-bits.css": "./dist/style.css"
   }
 }
