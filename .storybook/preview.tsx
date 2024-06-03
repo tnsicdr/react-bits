@@ -1,6 +1,15 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
+import "./../src/styles/main.css";
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <div className="react-bits">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     controls: {
       matchers: {
