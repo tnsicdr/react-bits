@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "test": "vitest",
-    "build": "tsc && vite build",
+    "build": "tsc -p tsconfig.build.json && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -54,26 +54,24 @@
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
-    "@types/react-dom": "^17.0.1 || 18.x",
-    "react": "^17.0.1 || 18.x"
+    "@types/react-dom": "^18.x",
+    "react": "^18.x"
   },
   "files": [
     "dist"
   ],
-  "main": "./dist/react-bits.umd.js",
-  "module": "./dist/react-bits.es.js",
-  "types": "./dist/react-bits.d.ts",
+  "main": "./dist/main.umd.js",
+  "module": "./dist/main.es.js",
+  "types": "./dist/main.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/react-bits.d.ts",
-        "default": "./dist/react-bits.es.js"
+        "default": "./dist/main.es.js"
       },
       "require": {
-        "types": "./dist/react-bits.d.ts",
-        "default": "./dist/react-bits.umd.js"
+        "default": "./dist/main.umd.js"
       }
     },
-    "./react-bits.css": "./dist/style.css"
+    "./styles.css": "./dist/style.css"
   }
 }

@@ -2,7 +2,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import path from "node:path";
+import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,6 +10,8 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
+      rollupTypes: false,
+      tsconfigPath: "./tsconfig.build.json",
     }),
   ],
   test: {
@@ -18,14 +20,15 @@ export default defineConfig({
     setupFiles: "./src/tests/setup.ts",
   },
   build: {
+    copyPublicDir: false,
     lib: {
-      entry: path.resolve(__dirname, "src/lib/index.ts"),
+      entry: resolve(__dirname, "lib/main.ts"),
       name: "react-bits",
       formats: ["es", "umd"],
-      fileName: (format) => `react-bits.${format}.js`,
+      fileName: (format, entry) => `${entry}.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "react/jsx-runtime", "react-dom/client"],
       output: {
         globals: {
           react: "React",
