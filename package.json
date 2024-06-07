@@ -1,7 +1,7 @@
 {
   "name": "@tnsicdr/react-bits",
   "private": false,
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": "UNLICENSED",
   "type": "module",
   "scripts": {
@@ -17,7 +17,7 @@
   "dependencies": {
     "@storybook/test": "^8.0.10",
     "clsx": "^2.1.1",
-    "react": "18.3.1",
+    "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
@@ -62,11 +62,17 @@
   ],
   "main": "./dist/main.umd.js",
   "module": "./dist/main.es.js",
-  "types": "./dist/main.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/main.es.js",
-      "require": "./dist/main.umd.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/main.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/main.umd.js"
+      }
     },
     "./styles.css": "./dist/style.css"
   }
