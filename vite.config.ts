@@ -15,7 +15,7 @@ export default defineConfig({
       include: ["lib"],
       tsconfigPath: "./tsconfig.build.json",
       afterBuild: () => {
-        copyFileSync("dist/index.d.ts", "dist/index.d.mts");
+        copyFileSync("dist/index.d.ts", "dist/index.d.cts");
       },
     }),
   ],
