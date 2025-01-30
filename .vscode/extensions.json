@@ -1,3 +1,6 @@
 {
-  "recommendations": ["zixuanchen.vitest-explorer", "csstools.postcss"]
+  "recommendations": [
+    "csstools.postcss",
+    "vitest.explorer"
+  ]
 }
