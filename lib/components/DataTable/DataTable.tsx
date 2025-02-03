@@ -1,19 +1,25 @@
-type Column = {
-  label?: string;
-  fieldName: string;
-};
+import type { Column, SortOrder } from "./DataTable.types";
+import { sortArrayByKey } from "./DataTable.utils";
 
 type DataTableProps = {
   columns: Column[];
   data: Record<string, boolean | string | number | null | undefined>[];
+  defaultSort?: SortOrder;
   tableName: string;
 };
 
 export function DataTable({
   columns,
   data,
+  defaultSort,
   tableName,
 }: Readonly<DataTableProps>) {
+  const gridData =
+    defaultSort && data.length > 1
+      ? sortArrayByKey(data, defaultSort.fieldName, defaultSort.order)
+      : data;
+
+  console.debug("gridData", gridData);
   return (
     <table>
       <thead>
@@ -24,7 +30,7 @@ export function DataTable({
         </tr>
       </thead>
       <tbody>
-        {data.map((row, idx) => {
+        {gridData.map((row, idx) => {
           const key = `${tableName}-row-${idx}`;
           return (
             <tr key={key}>

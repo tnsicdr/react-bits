@@ -19,11 +19,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    tableName: 'testTable',
+    tableName: "testTable",
     columns: [
       { label: "Name", fieldName: "name" },
       { label: "Status", fieldName: "status" },
     ],
-    data: [{ name: "Timmy", status: "On-Prem" }],
+    data: [
+      { name: "Timmy", status: "On-Prem" },
+      { name: "Steve", status: "Remote" },
+    ],
+    defaultSort: { fieldName: "name", order: "ASC" },
   },
 };
